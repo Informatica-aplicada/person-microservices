@@ -3,7 +3,7 @@ using apiPersonaNet.Models;
 
 namespace apiPersonaNet.Services
 {
-    public class PersonServices
+    public class PersonServices:IPerson
     {
         public PersonServices(){}
 

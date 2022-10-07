@@ -9,7 +9,14 @@ namespace apiPersonaNet.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        PersonServices services = new PersonServices();
+
+     private readonly IPerson services;
+
+       public PersonController(IPerson services)
+    {
+        this.services = services;
+    }  
+        //PersonServices services = new PersonServices();
 
         [HttpPost("ids")]
         public List<PersonInfo> ListByYear([FromBody] int[] ids)
