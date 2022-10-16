@@ -9,7 +9,14 @@ namespace apiPersonaNet.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        PersonServices services = new PersonServices();
+
+        private readonly IPerson services;
+
+        public PersonController(IPerson services)
+        {
+            this.services = services;
+        }
+        //PersonServices services = new PersonServices();
 
         [HttpPost("ids")]
         public List<PersonInfo> ListByYear([FromBody] int[] ids)
@@ -22,10 +29,17 @@ namespace apiPersonaNet.Controllers
         [HttpPost("auth")]
         public string Auth([FromBody] LoginCredentials auth)
         {
-            UserModel um =  services.auth(auth);
+            UserModel um = services.auth(auth);
             var json_auth = JsonConvert.SerializeObject(um);
             return json_auth;
-            
+
+        }
+
+        [HttpPost("list")]
+        public List<PersonInfo> generalInfo([FromBody] int[] ids)
+        {
+            return services.getAllThePeople();
+
         }
 
         [HttpGet("/")]

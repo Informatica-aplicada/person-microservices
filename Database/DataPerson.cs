@@ -10,11 +10,13 @@ namespace apiPersonaNet.Database
     {
         public DataPerson() { }
 
-        public List<PersonInfo> List(int[] year){
+        public List<PersonInfo> List(int[] year)
+        {
             var json_ids = JsonConvert.SerializeObject(year);
             var list = new List<PersonInfo>();
             var conn = new DBConnection();
-            using (var sqlconn = new SqlConnection(conn.getConnection())){
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
                 sqlconn.Open();
                 Console.WriteLine("Coneccion a base de datos:" + sqlconn.State);
                 SqlCommand cmd = new SqlCommand(Procedures.person_sales_list, sqlconn);
@@ -26,8 +28,8 @@ namespace apiPersonaNet.Database
                     {
                         PersonInfo tmp = new PersonInfo();
                         tmp.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
-                        tmp.name = res["FirstName"].ToString();
-                        tmp.lastName = res["LastName"].ToString();
+                        tmp.FirstName = res["FirstName"].ToString();
+                        tmp.LastName = res["LastName"].ToString();
 
                         list.Add(tmp);
                     }
@@ -41,7 +43,49 @@ namespace apiPersonaNet.Database
 
         //End sales1
 
-        public UserModel auth (LoginCredentials auth){
+
+
+        public List<PersonInfo> ListInformationG()
+        {
+
+            var list = new List<PersonInfo>();
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+                Console.WriteLine("Conexion a base de datos:" + sqlconn.State);
+                SqlCommand cmd = new SqlCommand(Procedures.sp_list_person, sqlconn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                using (var res = cmd.ExecuteReader())
+                {
+                    while (res.Read())
+                    {
+                        Console.WriteLine("nea");
+                        PersonInfo tmp = new PersonInfo();
+                        tmp.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
+                        tmp.PersonType = res["PersonType"].ToString();
+                        tmp.NameStyle = Convert.ToInt32(res["NameStyle"]);
+                        tmp.Title = res["Title"].ToString();
+                        tmp.FirstName = res["FirstName"].ToString();
+                        tmp.LastName = res["LastName"].ToString();
+                        tmp.MiddleName = res["MiddleName"].ToString();
+                        tmp.Suffix = "" + res["Suffix"].ToString();
+                        tmp.EmailPromotion = Convert.ToInt32(res["EmailPromotion"]);
+                        tmp.AdditionalContactInfo = res["AdditionalContactInfo"].ToString();
+                        tmp.Demographics = res["Demographics"].ToString();
+                        tmp.rowguid = res["rowguid"].ToString();
+                        // tmp.ModifiedDate =  DateTime.Parse(res["ModifiedDate"].ToString());
+                        list.Add(tmp);
+                    }
+                }
+            }
+            return list;
+        }
+
+
+        public UserModel auth(LoginCredentials auth)
+        {
 
             UserModel userTemp = new UserModel();
             var json_auth = JsonConvert.SerializeObject(auth);
@@ -51,7 +95,7 @@ namespace apiPersonaNet.Database
             using (var sqlconn = new SqlConnection(conn.getConnection()))
             {
                 sqlconn.Open();
-                Console.WriteLine( sqlconn.State);
+                Console.WriteLine(sqlconn.State);
                 SqlCommand cmd = new SqlCommand(Procedures.auth, sqlconn);
                 cmd.Parameters.AddWithValue("user_information", json_auth);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -64,7 +108,7 @@ namespace apiPersonaNet.Database
                         userTemp.LastName = res["LastName"].ToString();
                         userTemp.PasswordHash = res["PasswordHash"].ToString();
                         userTemp.EmailAddress = res["EmailAddress"].ToString();
-                    
+
                     }
                 }
             }
