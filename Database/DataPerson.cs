@@ -72,15 +72,118 @@ namespace apiPersonaNet.Database
                         tmp.MiddleName = res["MiddleName"].ToString();
                         tmp.Suffix = "" + res["Suffix"].ToString();
                         tmp.EmailPromotion = Convert.ToInt32(res["EmailPromotion"]);
-                        tmp.AdditionalContactInfo = res["AdditionalContactInfo"].ToString();
-                        tmp.Demographics = res["Demographics"].ToString();
-                        tmp.rowguid = res["rowguid"].ToString();
-                        // tmp.ModifiedDate =  DateTime.Parse(res["ModifiedDate"].ToString());
+
                         list.Add(tmp);
                     }
                 }
             }
             return list;
+        }
+
+
+        public PersonInfo GetPerson(int id)
+        {
+
+            PersonInfo tmp = new PersonInfo();
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+
+                SqlCommand cmd = new SqlCommand(Procedures.showPerson, sqlconn);
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                using (var res = cmd.ExecuteReader())
+                {
+                    while (res.Read())
+                    {
+
+                        tmp.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
+                        tmp.PersonType = res["PersonType"].ToString();
+                        tmp.NameStyle = Convert.ToInt32(res["NameStyle"]);
+                        tmp.Title = res["Title"].ToString();
+                        tmp.FirstName = res["FirstName"].ToString();
+                        tmp.LastName = res["LastName"].ToString();
+                        tmp.MiddleName = res["MiddleName"].ToString();
+                        tmp.Suffix = "" + res["Suffix"].ToString();
+                        tmp.EmailPromotion = Convert.ToInt32(res["EmailPromotion"]);
+
+                    }
+                }
+
+            }
+
+            return tmp;
+        }
+
+        public void deletePerson(int id)
+        {
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+
+                SqlCommand cmd = new SqlCommand(Procedures.delete_person, sqlconn);
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.ExecuteNonQuery();
+
+            }
+
+        }
+
+        public void addPerson(PersonInfo objeto)
+        {
+
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+
+                SqlCommand cmd = new SqlCommand(Procedures.sp_insert_person, sqlconn);
+                cmd.Parameters.AddWithValue("PersonType", objeto.PersonType);
+                cmd.Parameters.AddWithValue("NameStyle", objeto.NameStyle);
+                cmd.Parameters.AddWithValue("Title", objeto.Title);
+                cmd.Parameters.AddWithValue("FirstName", objeto.FirstName);
+                cmd.Parameters.AddWithValue("LastName", objeto.LastName);
+                cmd.Parameters.AddWithValue("MiddleName", objeto.MiddleName);
+                cmd.Parameters.AddWithValue("Suffix", objeto.Suffix);
+                cmd.Parameters.AddWithValue("EmailPromotion", objeto.EmailPromotion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
+
+            }
+
+        }
+        public void updatePerson(PersonInfo objeto)
+        {
+
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+
+                SqlCommand cmd = new SqlCommand(Procedures.sp_update_person, sqlconn);
+                cmd.Parameters.AddWithValue("@BusinessEntityID", objeto.BusinessEntityID);
+                cmd.Parameters.AddWithValue("PersonType", objeto.PersonType);
+                cmd.Parameters.AddWithValue("NameStyle", objeto.NameStyle);
+                cmd.Parameters.AddWithValue("Title", objeto.Title);
+                cmd.Parameters.AddWithValue("FirstName", objeto.FirstName);
+                cmd.Parameters.AddWithValue("LastName", objeto.LastName);
+                cmd.Parameters.AddWithValue("MiddleName", objeto.MiddleName);
+                cmd.Parameters.AddWithValue("Suffix", objeto.Suffix);
+                cmd.Parameters.AddWithValue("EmailPromotion", objeto.EmailPromotion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
+
+            }
+
         }
 
 

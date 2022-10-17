@@ -2,9 +2,17 @@ using apiPersonaNet.Models;
 
 public interface IPerson
 {
-    List<PersonInfo>  getPersonList(int[] ids);
+    List<PersonInfo> getPersonList(int[] ids);
 
-     public List<PersonInfo> getAllThePeople();
+    List<PersonInfo> getAllThePeople();
+
+    PersonInfo getPerson(int id);
+
+    void deletePerson(int id);
+
+    void addPerson(PersonInfo person);
+
+    void updatePerson(PersonInfo person);
 
     UserModel auth(LoginCredentials auth);
 

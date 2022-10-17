@@ -19,6 +19,26 @@ namespace apiPersonaNet.Services
             return dp.ListInformationG();
         }
 
+        public PersonInfo getPerson(int id)
+        {
+            return dp.GetPerson(id);
+        }
+
+        public void deletePerson(int id)
+        {
+            dp.deletePerson(id);
+        }
+
+        public void addPerson(PersonInfo person)
+        {
+            dp.addPerson(person);
+        }
+
+        public void updatePerson(PersonInfo person)
+        {
+            dp.updatePerson(person);
+        }
+
         public UserModel auth(LoginCredentials auth)
         {
 

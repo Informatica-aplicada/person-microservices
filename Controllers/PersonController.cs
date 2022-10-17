@@ -42,6 +42,42 @@ namespace apiPersonaNet.Controllers
 
         }
 
+        [HttpPost("searchPersonById")]
+        public PersonInfo searchPersonById([FromBody] int id)
+        {
+  
+            return services.getPerson(id);
+
+        }
+
+        [HttpDelete("deleteP")]
+        public bool deletePerson([FromBody] int id)
+        {
+            Console.WriteLine("SIppppp suppp");
+           services.deletePerson(id);
+
+           return true;
+        }
+
+        [HttpPost("addPerson")]
+        public bool insertPerson([FromBody] PersonInfo person)
+        {
+            Console.WriteLine(person.FirstName);
+           services.addPerson(person);
+
+           return true;
+        }
+
+        [HttpPut("updatePerson")]
+        public bool updatePerson([FromBody] PersonInfo person)
+        {
+            Console.WriteLine(person.FirstName);
+           services.updatePerson(person);
+
+           return true;
+        }
+
+
         [HttpGet("/")]
         public string index()
         {

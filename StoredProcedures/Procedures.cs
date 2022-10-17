@@ -8,5 +8,9 @@ namespace apiPersonaNet.StoredProcedures
         public static string person_sales_list = "sp_list_of_employees_by_id";
         public static string sales_by_years = "sales_per_year";
         public static string sp_list_person = "sp_list_person";
+        public static string showPerson = "searchPersonById";
+        public static string delete_person = "sp_deletePerson";
+        public static string sp_insert_person = "sp_insert_person";
+        public static string sp_update_person = "sp_update_person";
     }
 }
