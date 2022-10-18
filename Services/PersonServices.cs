@@ -3,7 +3,7 @@ using apiPersonaNet.Models;
 
 namespace apiPersonaNet.Services
 {
-    public class PersonServices:IPerson
+    public class PersonServices : IPerson
     {
         public PersonServices() { }
 
@@ -22,6 +22,16 @@ namespace apiPersonaNet.Services
         public PersonInfo getPerson(int id)
         {
             return dp.GetPerson(id);
+        }
+
+        public List<PersonEmail> getListEmailSh(int id)
+        {
+            return dp.list_emails_sh(id);
+        }
+
+        public void sp_crud_hsh(PersonEmail person)
+        {
+             dp.sp_crud_homeworkSH(person);
         }
 
         public void deletePerson(int id)

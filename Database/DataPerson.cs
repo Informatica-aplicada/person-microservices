@@ -117,6 +117,38 @@ namespace apiPersonaNet.Database
             return tmp;
         }
 
+        public List<PersonEmail> list_emails_sh(int id)
+        {
+            List<PersonEmail> list = new List<PersonEmail>();
+            PersonEmail tmp = new PersonEmail();
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+
+                SqlCommand cmd = new SqlCommand(Procedures.sp_list_person_email_sh, sqlconn);
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                using (var res = cmd.ExecuteReader())
+                {
+                    while (res.Read())
+                    {
+
+                        tmp.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
+                        tmp.EmailAddress = res["EmailAddress"].ToString();
+                        tmp.EmailAddressID = Convert.ToInt32(res["EmailAddressID"]);
+
+                        list.Add(tmp);
+                        
+                    }
+                }
+
+            }
+
+            return list;
+        }
+
         public void deletePerson(int id)
         {
             var conn = new DBConnection();
@@ -129,6 +161,28 @@ namespace apiPersonaNet.Database
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.ExecuteNonQuery();
+
+            }
+
+        }
+
+        public void sp_crud_homeworkSH(PersonEmail objeto)
+        {
+
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+
+                SqlCommand cmd = new SqlCommand(Procedures.sp_crud_homeworkSH, sqlconn);
+                cmd.Parameters.AddWithValue("BusinessEntityID", objeto.BusinessEntityID);
+                cmd.Parameters.AddWithValue("EmailAddress", objeto.EmailAddress);
+                cmd.Parameters.AddWithValue("EmailAddressUpdate", objeto.EmailAddressUpdate);
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
 
             }
 
