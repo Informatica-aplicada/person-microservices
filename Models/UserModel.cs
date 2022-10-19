@@ -9,6 +9,12 @@ namespace apiPersonaNet.Models
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? EmailAddress { get; set; }
+        public int? EmailAddressID { get; set; }
         public string? PasswordHash { get; set; }
+
+        public string ToString()
+        {
+            return "Person: " + BusinessEntityID + " " + FirstName +" "+ EmailAddress + " " + EmailAddressID;
+        }
     }
 }
