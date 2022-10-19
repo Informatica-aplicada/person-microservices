@@ -13,6 +13,6 @@ namespace apiPersonaNet.StoredProcedures
         public static string sp_insert_person = "sp_insert_person";
         public static string sp_update_person = "sp_update_person";
         public static string sp_list_person_email_sh = "sp_list_person_email_sh";
-        public static string sp_crud_homeworkSH = "sp_crud_homeworkSH";
+        public static string sp_crud_homeworkSH = "Person.sp_crud_homeworkSH";
     }
 }

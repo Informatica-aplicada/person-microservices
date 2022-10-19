@@ -137,7 +137,7 @@ namespace apiPersonaNet.Database
 
                         tmp.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
                         tmp.EmailAddress = res["EmailAddress"].ToString();
-                        tmp.EmailAddressID = Convert.ToInt32(res["EmailAddressID"]);
+                       // tmp.EmailAddressID = Convert.ToInt32(res["EmailAddressID"]);
 
                         list.Add(tmp);
                         
@@ -168,16 +168,15 @@ namespace apiPersonaNet.Database
 
         public void sp_crud_homeworkSH(PersonEmail objeto)
         {
-
+            var json_emal = JsonConvert.SerializeObject(objeto);
             var conn = new DBConnection();
             using (var sqlconn = new SqlConnection(conn.getConnection()))
             {
                 sqlconn.Open();
 
                 SqlCommand cmd = new SqlCommand(Procedures.sp_crud_homeworkSH, sqlconn);
-                cmd.Parameters.AddWithValue("BusinessEntityID", objeto.BusinessEntityID);
-                cmd.Parameters.AddWithValue("EmailAddress", objeto.EmailAddress);
-                cmd.Parameters.AddWithValue("EmailAddressUpdate", objeto.EmailAddressUpdate);
+                cmd.Parameters.AddWithValue("object", json_emal);
+
 
 
                 cmd.CommandType = CommandType.StoredProcedure;

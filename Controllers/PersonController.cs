@@ -80,9 +80,15 @@ namespace apiPersonaNet.Controllers
         [HttpPost("listPersonEmail")]
         public List<PersonEmail> list_email([FromBody] int id)
         {
-         
-            
+          
             return services.getListEmailSh(id);
+        }
+
+                [HttpPost("crudemailsh")]
+        public void crudemailsh([FromBody] PersonEmail person)
+        {
+          
+             services.sp_crud_hsh(person);
         }
 
 
