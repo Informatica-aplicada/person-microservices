@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Usuarios\\Documents\\githubPro\\person-microservices\\apiPersonaNet.csproj": {}
+    "C:\\Users\\luisf\\Desktop\\api person informatica aplicada\\person-microservices\\apiPersonaNet.csproj": {}
   },
   "projects": {
-    "D:\\Usuarios\\Documents\\githubPro\\person-microservices\\apiPersonaNet.csproj": {
+    "C:\\Users\\luisf\\Desktop\\api person informatica aplicada\\person-microservices\\apiPersonaNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuarios\\Documents\\githubPro\\person-microservices\\apiPersonaNet.csproj",
+        "projectUniqueName": "C:\\Users\\luisf\\Desktop\\api person informatica aplicada\\person-microservices\\apiPersonaNet.csproj",
         "projectName": "apiPersonaNet",
-        "projectPath": "D:\\Usuarios\\Documents\\githubPro\\person-microservices\\apiPersonaNet.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuarios\\Documents\\githubPro\\person-microservices\\obj\\",
+        "projectPath": "C:\\Users\\luisf\\Desktop\\api person informatica aplicada\\person-microservices\\apiPersonaNet.csproj",
+        "packagesPath": "C:\\Users\\luisf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luisf\\Desktop\\api person informatica aplicada\\person-microservices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luisf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -63,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
