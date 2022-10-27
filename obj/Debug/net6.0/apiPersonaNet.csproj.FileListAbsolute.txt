@@ -168,3 +168,13 @@ D:\Usuarios\Documents\githubPro\person-microservices\obj\Debug\net6.0\apiPersona
 D:\Usuarios\Documents\githubPro\person-microservices\obj\Debug\net6.0\ref\apiPersonaNet.dll
 D:\Usuarios\Documents\githubPro\person-microservices\obj\Debug\net6.0\apiPersonaNet.pdb
 D:\Usuarios\Documents\githubPro\person-microservices\obj\Debug\net6.0\apiPersonaNet.genruntimeconfig.cache
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.AssemblyReference.cache
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.AssemblyInfoInputs.cache
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.AssemblyInfo.cs
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.CoreCompileInputs.cache
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.dll
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\refint\apiPersonaNet.dll
+C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.pdb
