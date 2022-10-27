@@ -1,28 +1,40 @@
 using apiPersonaNet.Models;
 using apiPersonaNet.Services;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace apiPersonaNet.Controllers
 {
-    [Route("api/person")]
+    [Route("/emails")]
     [ApiController]
     public class PersonEmailsController : ControllerBase
     {
         PersonEmailsServices services = new PersonEmailsServices();
 
-        [HttpPost()]
-        public List<PersonEmails> ListPersonEmails()
+        [HttpGet()]
+        public List<PersonEmails> List()
         {
-            Console.WriteLine(JsonConvert.SerializeObject());
             return services.getPersonEmailsList();
         }
 
-        [HttpPost("BusinessEntityID")]
+        [HttpGet("{BusinessEntityID}")]
         public List<String> ListEmails([FromBody] int BusinessEntityID)
         {
-            Console.WriteLine(JsonConvert.SerializeObject(BusinessEntityID));
             return services.getEmailsList(BusinessEntityID);
+        }
+
+        [HttpPost]
+        public IActionResult Add([FromBody] PersonEmails data, int action){
+             return StatusCode(StatusCodes.Status200OK, new { result = "add" });
+        }
+
+        [HttpPost]
+        public IActionResult Update([FromBody] PersonEmails data, int action){
+             return StatusCode(StatusCodes.Status200OK, new { result = "update" });
+        }
+
+        [HttpDelete("{BusinessEntityID}")]
+        public IActionResult Delete([FromBody] int BusinessEntityID){
+            return StatusCode(StatusCodes.Status200OK, new { result = "delete" });
         }
 
     }
