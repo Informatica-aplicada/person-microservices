@@ -11,13 +11,13 @@ namespace apiPersonaNet.Controllers
     {
         PersonEmailsServices services = new PersonEmailsServices();
 
-        [HttpGet()]
+        [HttpGet]
         public List<PersonEmails> List(){
             return services.getPersonEmailsList();
         }
 
         [HttpGet("{BusinessEntityID}")]
-        public List<Email> ListEmails([FromBody] int BusinessEntityID){
+        public List<Email> ListEmails([FromRoute] int BusinessEntityID){
             return services.getEmailsList(BusinessEntityID);
         }
 
@@ -26,7 +26,7 @@ namespace apiPersonaNet.Controllers
              return StatusCode(StatusCodes.Status200OK, new { result = "add" });
         }
 
-        [HttpPost]
+        [HttpPut]
         public IActionResult Update([FromBody] PersonEmails data, int action){
              return StatusCode(StatusCodes.Status200OK, new { result = "update" });
         }
