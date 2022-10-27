@@ -135,7 +135,13 @@ namespace apiPersonaNet.Database
             {
                 
                 for (int i = 0; i < emails.Count; i++) {
+                
                     EmailModel email = emails[i];
+                    if(emails[i].EmailId == 0){
+                        email.accion = 1;
+                    }else {
+                        email.accion = 2;
+                    }
                     sqlconn.Open();
                     SqlCommand cmd = new SqlCommand("person.sp_emailFuncionsDayan", sqlconn);
                     cmd.Parameters.AddWithValue("@bussinessEntityId", email.BusinessEntityID);

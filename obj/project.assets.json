@@ -724,19 +724,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DayanDiaz\\.nuget\\packages\\": {}
+    "C:\\Users\\Steve\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DayanDiaz\\Desktop\\Informatica_Aplicada\\proyectoEnGit\\person-microservices\\apiPersonaNet.csproj",
+      "projectUniqueName": "C:\\Users\\Steve\\Desktop\\Daya\\person-microservices\\apiPersonaNet.csproj",
       "projectName": "apiPersonaNet",
-      "projectPath": "C:\\Users\\DayanDiaz\\Desktop\\Informatica_Aplicada\\proyectoEnGit\\person-microservices\\apiPersonaNet.csproj",
-      "packagesPath": "C:\\Users\\DayanDiaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DayanDiaz\\Desktop\\Informatica_Aplicada\\proyectoEnGit\\person-microservices\\obj\\",
+      "projectPath": "C:\\Users\\Steve\\Desktop\\Daya\\person-microservices\\apiPersonaNet.csproj",
+      "packagesPath": "C:\\Users\\Steve\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Steve\\Desktop\\Daya\\person-microservices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DayanDiaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -794,7 +794,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -24,8 +24,13 @@ namespace apiPersonaNet.Controllers
         }
 
         [HttpPost]
-        public bool guardar([FromBody] List<EmailModel> emails) {
+        public bool guardar([FromBody] List<EmailModel> emails)
+        {
 
+            for (int i = 0; i < emails.Count; i++)
+            {
+                Console.WriteLine(emails[i].EmailAddress);
+            }
 
             return services.saveChangesEmail(emails);
         }
