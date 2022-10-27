@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using apiPersonaNet.Models;
 using apiPersonaNet.Services;
+using apiPersonaNet.StoredProcedures;
 using ApiPersonEmail.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -13,15 +14,10 @@ namespace apiPersonaNet.Controllers
     public class PersonController : ControllerBase
     {
         private readonly string cadenaSQL;
-        PersonServices services = new PersonServices();
+        PersonServices services;
         public PersonController(IConfiguration config){
             cadenaSQL = config.GetConnectionString("ConnectionString");
-        }
-
-        [HttpPost("list/{id}")]
-       public ActionResult<TopPerson> GetEmail(int id)
-        {
-            return Listar().Single(x => x.BusinessEntityID == id);
+            services =  new PersonServices(config);
         }
 
         [HttpGet]
@@ -81,8 +77,10 @@ namespace apiPersonaNet.Controllers
                         {
                             lista.Add(new EmailPerson()
                             {
-                                EmailAddress = rd["EmailAddress"].ToString()
-
+                                businessEntityID = Convert.ToInt32(rd["BusinessEntityID"]),
+                                emailAddressID = Convert.ToInt32(rd["EmailAddressID"]),
+                                emailAddress = rd["EmailAddress"].ToString()
+                                
                             });
                         }
                     }
@@ -90,7 +88,7 @@ namespace apiPersonaNet.Controllers
 
                 }
 
-                purchase = lista.Where(item => item.BusinessEntityID == listId).FirstOrDefault();
+                purchase = lista.Where(item => item.businessEntityID == listId).FirstOrDefault();
 
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
 
@@ -100,6 +98,30 @@ namespace apiPersonaNet.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = ex.Message, response = lista });
             }
         }
+
+        [HttpPost]
+        [Route("crudPerson")]
+        public void guardarPerson([FromBody] EmailPerson objeto)
+        {
+            services.saveEmail(objeto);
+        }
+
+        [HttpPut]
+        [Route("editPerson")]
+
+        public void editarPerson([FromBody] EmailPerson objeto)
+        {
+            services.editEmail(objeto);
+        }
+
+        [HttpDelete("delete/{email:int}")]
+
+        public void deletePerson(int email)
+        {
+            services.deleteEmail(email);
+        }
+
+
 
         [HttpPost("ids")]
         public List<PersonInfo> ListByYear([FromBody] int[] ids)
