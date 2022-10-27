@@ -9,9 +9,6 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using System.Data.SqlClient;
-
 using Microsoft.AspNetCore.Cors;
 
 namespace apiPersonaNet.Database
@@ -32,11 +29,11 @@ namespace apiPersonaNet.Database
                 {
                     while (res.Read())
                     {
-                        PersonEmails tmp = new PersonEmails();
-                        tmp.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
-                        tmp.Name = res["Name"].ToString();
+                        PersonEmails person = new PersonEmails();
+                        person.BusinessEntityID = Convert.ToInt32(res["BusinessEntityID"]);
+                        person.Name = res["Name"].ToString();
 
-                        list.Add(tmp);
+                        list.Add(person);
                     }
                 }
             }
@@ -57,8 +54,8 @@ namespace apiPersonaNet.Database
                     while (res.Read())
                     {
                         Email emails = new Email();
-                        tmp.EmailAddressID = Convert.ToInt32(res["EmailAddressID"]);
-                        tmp.EmailAddress = res["EmailAddress"].ToString;
+                        emails.EmailAddressID = Convert.ToInt32(res["EmailAddressID"]);
+                        emails.EmailAddress = res["EmailAddress"].ToString();
 
                         list.Add(emails);
                     }
@@ -74,10 +71,10 @@ namespace apiPersonaNet.Database
                 {
                     sqlconn.Open();
                     var cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
-                    cmd.Parameters.AddWithValue("@BusinessEntityID", data.BusinessEntityID);
-                    cmd.Parameters.AddWithValue("@EmailAddressID", data.EmailAddressID);
-                    cmd.Parameters.AddWithValue("@EmailAddress", data.EmailAddress);
-                    cmd.Parameters.AddWithValue("@OptionAction", data.@OptionAction);
+                    cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
+                    cmd.Parameters.AddWithValue("@EmailAddressID", email.EmailAddressID);
+                    cmd.Parameters.AddWithValue("@EmailAddress", email.EmailAddress);
+                    cmd.Parameters.AddWithValue("@OptionAction", Action);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -92,10 +89,10 @@ namespace apiPersonaNet.Database
                 {
                     sqlconn.Open();
                     var cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
-                    cmd.Parameters.AddWithValue("@BusinessEntityID", data.BusinessEntityID);
-                    cmd.Parameters.AddWithValue("@EmailAddressID", data.EmailAddressID);
-                    cmd.Parameters.AddWithValue("@EmailAddress", data.EmailAddress);
-                    cmd.Parameters.AddWithValue("@OptionAction", data.@OptionAction);
+                    cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
+                    cmd.Parameters.AddWithValue("@EmailAddressID", email.EmailAddressID);
+                    cmd.Parameters.AddWithValue("@EmailAddress", email.EmailAddress);
+                    cmd.Parameters.AddWithValue("@OptionAction", Action);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -111,9 +108,9 @@ namespace apiPersonaNet.Database
                 sqlconn.Open();
                 SqlCommand cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
                 cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
-                cmd.Parameters.AddWithValue("@EmailAddressID", data.EmailAddressID);
-                cmd.Parameters.AddWithValue("@EmailAddress", data.EmailAddress);
-                cmd.Parameters.AddWithValue("@OptionAction", data.@OptionAction);
+                cmd.Parameters.AddWithValue("@EmailAddressID", email.EmailAddressID);
+                cmd.Parameters.AddWithValue("@EmailAddress", email.EmailAddress);
+                cmd.Parameters.AddWithValue("@OptionAction", Action);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
             }

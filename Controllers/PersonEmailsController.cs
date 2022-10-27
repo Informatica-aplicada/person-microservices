@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace apiPersonaNet.Controllers
 {
+
     [Route("/emails")]
     [ApiController]
     public class PersonEmailsController : ControllerBase
@@ -11,14 +12,12 @@ namespace apiPersonaNet.Controllers
         PersonEmailsServices services = new PersonEmailsServices();
 
         [HttpGet()]
-        public List<PersonEmails> List()
-        {
+        public List<PersonEmails> List(){
             return services.getPersonEmailsList();
         }
 
         [HttpGet("{BusinessEntityID}")]
-        public List<String> ListEmails([FromBody] int BusinessEntityID)
-        {
+        public List<Email> ListEmails([FromBody] int BusinessEntityID){
             return services.getEmailsList(BusinessEntityID);
         }
 

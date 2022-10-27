@@ -1,11 +1,9 @@
 using apiPersonaNet.Database;
 using apiPersonaNet.Models;
-using System;
-using Microsoft.AspNetCore.Mvc;
 
 namespace apiPersonaNet.Services
 {
-    public class PersonEmailsServices:IPersonEmails
+    public class PersonEmailsServices
     {
         public PersonEmailsServices(){}
 
