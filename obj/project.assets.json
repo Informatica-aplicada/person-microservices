@@ -724,26 +724,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Steve\\.nuget\\packages\\": {}
+    "C:\\Users\\Susana\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Steve\\Desktop\\su\\person-microservices\\apiPersonaNet.csproj",
+      "projectUniqueName": "C:\\Users\\Susana\\Documents\\Semestre VI\\Informática Aplicada a los Negocios\\Proyecto\\Respositorios\\person-microservices\\apiPersonaNet.csproj",
       "projectName": "apiPersonaNet",
-      "projectPath": "C:\\Users\\Steve\\Desktop\\su\\person-microservices\\apiPersonaNet.csproj",
-      "packagesPath": "C:\\Users\\Steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Steve\\Desktop\\su\\person-microservices\\obj\\",
+      "projectPath": "C:\\Users\\Susana\\Documents\\Semestre VI\\Informática Aplicada a los Negocios\\Proyecto\\Respositorios\\person-microservices\\apiPersonaNet.csproj",
+      "packagesPath": "C:\\Users\\Susana\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Susana\\Documents\\Semestre VI\\Informática Aplicada a los Negocios\\Proyecto\\Respositorios\\person-microservices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Susana\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -794,7 +792,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

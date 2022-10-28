@@ -7,7 +7,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options => options.AddPolicy("corspolicy", build =>
+{
+    build.WithOrigins("http://localhost:3000","http://localhost:3001","http://localhost:3002", "https://informatica-aplicada.github.io").AllowAnyHeader().AllowAnyMethod();
+})); 
+
 var app = builder.Build();
+app.UseCors("corspolicy"); 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
