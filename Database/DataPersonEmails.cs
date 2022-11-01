@@ -17,10 +17,12 @@ namespace apiPersonaNet.Database
     {
         public DataPersonEmails() { }
 
-        public List<PersonEmails> List(){
+        public List<PersonEmails> List()
+        {
             var list = new List<PersonEmails>();
             var conn = new DBConnection();
-            using (var sqlconn = new SqlConnection(conn.getConnection())){
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
                 sqlconn.Open();
                 Console.WriteLine("Conection to DB:" + sqlconn.State);
                 SqlCommand cmd = new SqlCommand(ProceduresPersonEmails.spa_findPerson, sqlconn);
@@ -40,10 +42,12 @@ namespace apiPersonaNet.Database
             return list;
         }
 
-        public List<Email> getEmails(int BusinessEntityID){
+        public List<Email> getEmails(int BusinessEntityID)
+        {
             var list = new List<Email>();
             var conn = new DBConnection();
-            using (var sqlconn = new SqlConnection(conn.getConnection())){
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
                 sqlconn.Open();
                 Console.WriteLine("Conection to DB:" + sqlconn.State);
                 SqlCommand cmd = new SqlCommand(ProceduresPersonEmails.spa_getEmailPerson, sqlconn);
@@ -54,8 +58,8 @@ namespace apiPersonaNet.Database
                     while (res.Read())
                     {
                         Email emails = new Email();
-                        emails.EmailAddressID = Convert.ToInt32(res["EmailAddressID"]);
-                        emails.EmailAddress = res["EmailAddress"].ToString();
+                        emails.emailAddressID = Convert.ToInt32(res["EmailAddressID"]);
+                        emails.emailAddress = res["EmailAddress"].ToString();
 
                         list.Add(emails);
                     }
@@ -64,38 +68,40 @@ namespace apiPersonaNet.Database
             return list;
         }
 
-        public bool Add (Email email, int BusinessEntityID, int Action){
+        public bool Add(Email email)
+        {
 
-             var conn = new DBConnection();
-                using (var sqlconn = new SqlConnection(conn.getConnection()))
-                {
-                    sqlconn.Open();
-                    var cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
-                    cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
-                    cmd.Parameters.AddWithValue("@EmailAddressID", email.EmailAddressID);
-                    cmd.Parameters.AddWithValue("@EmailAddress", email.EmailAddress);
-                    cmd.Parameters.AddWithValue("@OptionAction", Action);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
-                }
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+                var cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
+                cmd.Parameters.AddWithValue("@BusinessEntityID", email.businessEntityID);
+                cmd.Parameters.AddWithValue("@EmailAddressID", email.emailAddressID);
+                cmd.Parameters.AddWithValue("@EmailAddress", email.emailAddress);
+                cmd.Parameters.AddWithValue("@OptionAction", email.optionAction);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+            }
             return true;
 
         }
 
-        public bool Update (Email email, int BusinessEntityID, int Action){
+        public bool Update(Email email, int BusinessEntityID, int Action)
+        {
 
-             var conn = new DBConnection();
-                using (var sqlconn = new SqlConnection(conn.getConnection()))
-                {
-                    sqlconn.Open();
-                    var cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
-                    cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
-                    cmd.Parameters.AddWithValue("@EmailAddressID", email.EmailAddressID);
-                    cmd.Parameters.AddWithValue("@EmailAddress", email.EmailAddress);
-                    cmd.Parameters.AddWithValue("@OptionAction", Action);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
-                }
+            var conn = new DBConnection();
+            using (var sqlconn = new SqlConnection(conn.getConnection()))
+            {
+                sqlconn.Open();
+                var cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
+                cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
+                cmd.Parameters.AddWithValue("@EmailAddressID", email.emailAddressID);
+                cmd.Parameters.AddWithValue("@EmailAddress", email.emailAddress);
+                cmd.Parameters.AddWithValue("@OptionAction", Action);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+            }
             return true;
 
         }
@@ -108,8 +114,8 @@ namespace apiPersonaNet.Database
                 sqlconn.Open();
                 SqlCommand cmd = new SqlCommand(ProceduresPersonEmails.spa_actionsEmails, sqlconn);
                 cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
-                cmd.Parameters.AddWithValue("@EmailAddressID", email.EmailAddressID);
-                cmd.Parameters.AddWithValue("@EmailAddress", email.EmailAddress);
+                cmd.Parameters.AddWithValue("@EmailAddressID", email.emailAddressID);
+                cmd.Parameters.AddWithValue("@EmailAddress", email.emailAddress);
                 cmd.Parameters.AddWithValue("@OptionAction", Action);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();

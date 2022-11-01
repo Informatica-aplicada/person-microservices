@@ -1,8 +1,10 @@
 namespace apiPersonaNet.Models
 {    public class Email
     {
-        public int EmailAddressID { get; set;}
-        public string? EmailAddress {get;set;}
+        public int? businessEntityID { get; set;}
+        public int? emailAddressID {get;set;}
+        public string? emailAddress { get; set; }
+        public int? optionAction { get; set; }
        
     }
 }

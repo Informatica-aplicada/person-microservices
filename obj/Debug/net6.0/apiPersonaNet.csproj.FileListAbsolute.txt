@@ -204,6 +204,13 @@ C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proye
 C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.CopyComplete
 C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\apiPersonaNet.genruntimeconfig.cache
 C:\Users\Susana\Documents\Semestre VI\Informática Aplicada a los Negocios\Proyecto\Respositorios\person-microservices\obj\Debug\net6.0\ref\apiPersonaNet.dll
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.AssemblyReference.cache
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.AssemblyInfoInputs.cache
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.AssemblyInfo.cs
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.CoreCompileInputs.cache
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\appsettings.json
 C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\package-lock.json
@@ -224,13 +231,6 @@ C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\runtimes\win-x64
 C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
 C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Steve\Desktop\su\person-microservices\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.AssemblyReference.cache
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.AssemblyInfoInputs.cache
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.AssemblyInfo.cs
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.csproj.CoreCompileInputs.cache
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\apiPersonaNet.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Steve\Desktop\su\person-microservices\obj\Debug\net6.0\scopedcss\bundle\apiPersonaNet.styles.css
