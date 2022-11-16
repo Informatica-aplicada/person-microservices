@@ -32,7 +32,7 @@ namespace apiPersonaNet.Controllers
             Console.WriteLine(data.emailAddress);
             Console.WriteLine(data.optionAction);
 
-            bool response = services.Add(data);
+            bool response = services.Action(data);
 
             if (response)
             {

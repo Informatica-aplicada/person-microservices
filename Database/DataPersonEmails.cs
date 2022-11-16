@@ -68,7 +68,8 @@ namespace apiPersonaNet.Database
             return list;
         }
 
-        public bool Add(Email email)
+        public bool Action
+        (Email email)
         {
 
             var conn = new DBConnection();
@@ -87,7 +88,7 @@ namespace apiPersonaNet.Database
 
         }
 
-        public bool Update(Email email, int BusinessEntityID, int Action)
+        /*public bool Update(Email email, int BusinessEntityID, int Action)
         {
 
             var conn = new DBConnection();
@@ -121,7 +122,7 @@ namespace apiPersonaNet.Database
                 cmd.ExecuteNonQuery();
             }
             return true;
-        }
+        }*/
 
     }
 }

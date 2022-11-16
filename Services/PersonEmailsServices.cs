@@ -13,15 +13,17 @@ namespace apiPersonaNet.Services
         public List<Email> getEmailsList(int BusinessEntityID){
             return dp.getEmails(BusinessEntityID);
         }
-         public bool Add(Email email){
-            return dp.Add(email);     
+         public bool Action(Email email){
+            return dp.Action(email);     
         }
-        public bool Update(Email email, int BusinessEntityID, int Action){
+
+        /*public bool Update(Email email, int BusinessEntityID, int Action){
             return dp.Update(email, BusinessEntityID, Action);     
         }
+
         public bool Delete(Email email, int BusinessEntityID, int Action) {
             return dp.Delete(email, BusinessEntityID, Action);
-        }
+        }*/
 
     }
 }
